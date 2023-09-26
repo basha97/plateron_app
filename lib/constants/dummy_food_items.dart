@@ -5,6 +5,7 @@ const List<FoodItem> dummyFoodItems = [
     id: '1',
     name: 'Pizza Margherita',
     price: 12.99,
+    quantity: 2,
     description:
         'Classic pizza topped with tomato sauce, mozzarella, and basil.',
     imageUrl:
