@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:plateron_app/constants/dummy_food_items.dart';
 import 'package:plateron_app/features/food_item/presentation/widgets/food_item.dart';
+import 'package:plateron_app/features/food_item/presentation/widgets/place_order.dart';
 
 class FoodItemScreen extends StatelessWidget {
   const FoodItemScreen({Key? key}) : super(key: key);
@@ -21,6 +22,8 @@ class FoodItemScreen extends StatelessWidget {
           itemCount: dummyFoodItems.length,
         ),
       ),
+      bottomNavigationBar: const PlaceOrderWidget(),
+      extendBody: true,
     );
   }
 }

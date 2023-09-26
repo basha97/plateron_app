@@ -5,7 +5,6 @@ const List<FoodItem> dummyFoodItems = [
     id: '1',
     name: 'Pizza Margherita',
     price: 12.99,
-    quantity: 2,
     description:
         'Classic pizza topped with tomato sauce, mozzarella, and basil.',
     imageUrl:
@@ -39,7 +38,6 @@ const List<FoodItem> dummyFoodItems = [
     id: '5',
     name: 'Salad Bowl',
     price: 8.99,
-    quantity: 1,
     description: 'Fresh mixed greens with your choice of dressing.',
     imageUrl:
         'https://images.unsplash.com/photo-1546069901-d5bfd2cbfb1f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2980&q=80',

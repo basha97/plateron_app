@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:plateron_app/routes/app_routes.dart';
 
@@ -21,14 +22,11 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: const Center(
-        child: Text(
-          'Splash Screen',
-          style: TextStyle(
-            color: Colors.black,
-            fontWeight: FontWeight.w600,
-            fontSize: 18.0,
-          ),
+      body: Center(
+        child: CachedNetworkImage(
+          imageUrl:
+              'https://framerusercontent.com/images/RSWRTDOZJx0vmSBtDfYKWiihE.png',
+          errorWidget: (context, url, error) => const Icon(Icons.error),
         ),
       ),
     );
