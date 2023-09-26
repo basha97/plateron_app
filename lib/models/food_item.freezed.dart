@@ -19,8 +19,8 @@ mixin _$FoodItem {
   String get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   double get price => throw _privateConstructorUsedError;
-  int get quantity => throw _privateConstructorUsedError;
-  String get description => throw _privateConstructorUsedError;
+  int? get quantity => throw _privateConstructorUsedError;
+  String? get description => throw _privateConstructorUsedError;
   String get imageUrl => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -37,8 +37,8 @@ abstract class $FoodItemCopyWith<$Res> {
       {String id,
       String name,
       double price,
-      int quantity,
-      String description,
+      int? quantity,
+      String? description,
       String imageUrl});
 }
 
@@ -58,8 +58,8 @@ class _$FoodItemCopyWithImpl<$Res, $Val extends FoodItem>
     Object? id = null,
     Object? name = null,
     Object? price = null,
-    Object? quantity = null,
-    Object? description = null,
+    Object? quantity = freezed,
+    Object? description = freezed,
     Object? imageUrl = null,
   }) {
     return _then(_value.copyWith(
@@ -75,14 +75,14 @@ class _$FoodItemCopyWithImpl<$Res, $Val extends FoodItem>
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
               as double,
-      quantity: null == quantity
+      quantity: freezed == quantity
           ? _value.quantity
           : quantity // ignore: cast_nullable_to_non_nullable
-              as int,
-      description: null == description
+              as int?,
+      description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       imageUrl: null == imageUrl
           ? _value.imageUrl
           : imageUrl // ignore: cast_nullable_to_non_nullable
@@ -102,8 +102,8 @@ abstract class _$$_FoodItemCopyWith<$Res> implements $FoodItemCopyWith<$Res> {
       {String id,
       String name,
       double price,
-      int quantity,
-      String description,
+      int? quantity,
+      String? description,
       String imageUrl});
 }
 
@@ -121,8 +121,8 @@ class __$$_FoodItemCopyWithImpl<$Res>
     Object? id = null,
     Object? name = null,
     Object? price = null,
-    Object? quantity = null,
-    Object? description = null,
+    Object? quantity = freezed,
+    Object? description = freezed,
     Object? imageUrl = null,
   }) {
     return _then(_$_FoodItem(
@@ -138,14 +138,14 @@ class __$$_FoodItemCopyWithImpl<$Res>
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
               as double,
-      quantity: null == quantity
+      quantity: freezed == quantity
           ? _value.quantity
           : quantity // ignore: cast_nullable_to_non_nullable
-              as int,
-      description: null == description
+              as int?,
+      description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       imageUrl: null == imageUrl
           ? _value.imageUrl
           : imageUrl // ignore: cast_nullable_to_non_nullable
@@ -161,8 +161,8 @@ class _$_FoodItem implements _FoodItem {
       {required this.id,
       required this.name,
       required this.price,
-      required this.quantity,
-      required this.description,
+      this.quantity,
+      this.description,
       required this.imageUrl});
 
   @override
@@ -172,9 +172,9 @@ class _$_FoodItem implements _FoodItem {
   @override
   final double price;
   @override
-  final int quantity;
+  final int? quantity;
   @override
-  final String description;
+  final String? description;
   @override
   final String imageUrl;
 
@@ -215,8 +215,8 @@ abstract class _FoodItem implements FoodItem {
       {required final String id,
       required final String name,
       required final double price,
-      required final int quantity,
-      required final String description,
+      final int? quantity,
+      final String? description,
       required final String imageUrl}) = _$_FoodItem;
 
   @override
@@ -226,9 +226,9 @@ abstract class _FoodItem implements FoodItem {
   @override
   double get price;
   @override
-  int get quantity;
+  int? get quantity;
   @override
-  String get description;
+  String? get description;
   @override
   String get imageUrl;
   @override

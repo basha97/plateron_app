@@ -8,8 +8,8 @@ class FoodItem with _$FoodItem {
     required String id,
     required String name,
     required double price,
-    required int quantity,
-    required String description,
+     int? quantity,
+     String? description,
     required String imageUrl,
   }) = _FoodItem;
 }
