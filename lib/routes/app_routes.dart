@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:plateron_app/features/food_item/presentation/screens/food_item_screen.dart';
-import 'package:plateron_app/features/splash/screens/splash_screen.dart';
+import 'package:plateron_app/features/splash/presentation/screens/splash_screen.dart';
 
 class AppRoutes {
   static const String splashRoute = '/';
