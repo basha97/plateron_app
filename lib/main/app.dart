@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:plateron_app/routes/app_routes.dart';
 
 class MyApp extends StatelessWidget {
@@ -6,7 +7,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return ProviderScope(
+        child: MaterialApp(
       title: 'Plateron App',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
@@ -15,6 +17,6 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.light,
       initialRoute: AppRoutes.splashRoute,
       onGenerateRoute: RoutesGenerator.getRoute,
-    );
+    ));
   }
 }

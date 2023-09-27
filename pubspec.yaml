@@ -38,6 +38,7 @@ dependencies:
   cached_network_image: ^3.3.0
   flutter_riverpod: ^2.4.0
   hooks_riverpod: ^2.4.0
+  riverpod: ^2.4.0
 
 
 dev_dependencies:
