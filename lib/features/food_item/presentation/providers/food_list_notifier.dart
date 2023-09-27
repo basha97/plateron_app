@@ -43,4 +43,14 @@ class FoodItemList extends StateNotifier<List<FoodItem>> {
       state = state.where((foodItem) => foodItem.id != item.id).toList();
     }
   }
+
+  double calculateTotalAmount() {
+    double totalAmount = 0.0;
+
+    for (var item in state) {
+      totalAmount += item.price * (item.quantity ?? 1);
+    }
+
+    return totalAmount;
+  }
 }

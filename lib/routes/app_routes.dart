@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:plateron_app/features/cart/presentation/screens/cart.dart';
 import 'package:plateron_app/features/food_item/presentation/screens/food_item_screen.dart';
 import 'package:plateron_app/features/splash/presentation/screens/splash_screen.dart';
 
@@ -6,6 +7,8 @@ class AppRoutes {
   static const String splashRoute = '/';
 
   static const String foodItemRoute = '/food_item';
+
+  static const String cartRoute = '/cart';
 }
 
 class RoutesGenerator {
@@ -15,6 +18,8 @@ class RoutesGenerator {
         return MaterialPageRoute(builder: (_) => const SplashScreen());
       case AppRoutes.foodItemRoute:
         return MaterialPageRoute(builder: (_) => const FoodItemScreen());
+      case AppRoutes.cartRoute:
+        return MaterialPageRoute(builder: (_) => const CartScreen());
       default:
         return unDefinedRoute();
     }

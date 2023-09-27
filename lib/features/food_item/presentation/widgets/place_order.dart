@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:plateron_app/features/food_item/presentation/providers/food_item_provider.dart';
+import 'package:plateron_app/routes/app_routes.dart';
 
 class PlaceOrderWidget extends HookConsumerWidget {
   const PlaceOrderWidget({Key? key}) : super(key: key);
@@ -25,7 +26,8 @@ class PlaceOrderWidget extends HookConsumerWidget {
                   Text('${foodItemListProvider.length} items'),
                   Spacer(),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () =>
+                        Navigator.pushNamed(context, AppRoutes.cartRoute),
                     child: Text(
                       'Place Order',
                       style: TextStyle(color: Colors.white),
