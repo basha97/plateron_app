@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:plateron_app/features/food_item/presentation/providers/food_item_provider.dart';
 import 'package:plateron_app/models/food_item.dart';
+import 'package:plateron_app/shared/theme/style_manager.dart';
 
 class ItemPriceSection extends StatelessWidget {
   const ItemPriceSection({Key? key, required this.foodItem}) : super(key: key);
@@ -12,7 +13,10 @@ class ItemPriceSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Text('\$ ${foodItem.price}'),
+        Text(
+          '\$ ${foodItem.price}',
+          style: getH1Medium(),
+        ),
         const Spacer(),
         ItemAddSection(foodItem: foodItem)
       ],
@@ -29,7 +33,7 @@ class ItemAddSection extends HookConsumerWidget {
     final foodItemListProvider = ref.watch(foodItemProvider);
     final currentItem = findItemInList(foodItemListProvider, foodItem);
     return Container(
-      padding: const EdgeInsets.all(4),
+      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 5),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
         border: Border.all(color: Colors.green, width: 2),
@@ -56,9 +60,10 @@ class ItemAddSection extends HookConsumerWidget {
               ],
             )
           : GestureDetector(
-              onTap: () =>
+        onTap: () =>
                   ref.read(foodItemProvider.notifier).addItem(foodItem),
-              child: Text('Add', style: TextStyle(fontSize: 12)),
+              child: Text('ADD',
+                  style: getH2Medium().copyWith(color: Colors.green)),
             ),
     );
   }

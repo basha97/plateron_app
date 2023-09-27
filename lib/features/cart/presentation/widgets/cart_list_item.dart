@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:plateron_app/features/food_item/presentation/providers/food_item_provider.dart';
 import 'package:plateron_app/models/food_item.dart';
+import 'package:plateron_app/shared/theme/font_manager.dart';
+import 'package:plateron_app/shared/theme/style_manager.dart';
 
 class CartListItemWidget extends HookConsumerWidget {
   const CartListItemWidget({Key? key, required this.foodItem})
@@ -17,7 +19,13 @@ class CartListItemWidget extends HookConsumerWidget {
         children: [
           Row(
             children: [
-              Text(foodItem.name),
+              Text(
+                foodItem.name,
+                style: getH1Medium().copyWith(
+                  fontWeight: FontWeightManager.semiBold,
+                  fontSize: FontSize.s18,
+                ),
+              ),
               const Spacer(),
               Container(
                 padding: const EdgeInsets.all(4),
@@ -49,7 +57,11 @@ class CartListItemWidget extends HookConsumerWidget {
             ],
           ),
           const SizedBox(height: 8),
-          Text('\$ ${(foodItem.price * (foodItem.quantity ?? 1))}'),
+          Text(
+            '\$ ${(foodItem.price * (foodItem.quantity ?? 1))}',
+            style: getH1Medium().copyWith(
+                fontWeight: FontWeightManager.semiBold, fontSize: FontSize.s14),
+          ),
         ],
       ),
     );

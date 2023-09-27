@@ -44,13 +44,13 @@ class FoodItemList extends StateNotifier<List<FoodItem>> {
     }
   }
 
-  double calculateTotalAmount() {
+  String calculateTotalAmount() {
     double totalAmount = 0.0;
 
     for (var item in state) {
       totalAmount += item.price * (item.quantity ?? 1);
     }
 
-    return totalAmount;
+    return totalAmount.toStringAsFixed(2);
   }
 }
