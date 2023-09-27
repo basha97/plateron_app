@@ -41,7 +41,7 @@ class CartListItemWidget extends HookConsumerWidget {
           ),
           const SizedBox(height: 8),
           Text(
-            '\$ ${(foodItem.price * (foodItem.quantity ?? 1))}',
+            '\$ ${(foodItem.price * (foodItem.quantity ?? 1)).toStringAsFixed(2)}',
             style: getH1Medium().copyWith(
                 fontWeight: FontWeightManager.semiBold, fontSize: FontSize.s14),
           ),
